@@ -15,8 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class TestTopicFileImpl {
 
-    public static String ROOT = "/Users/sunilkumar.kalva/workspace/learnings/interviews/messaging-platform" +
-            "/src/test/logs/";
+    public static String ROOT = "./logs/";
 
     public static String TOPIC = "demo";
     public static String FOLDER = ROOT + TOPIC;
