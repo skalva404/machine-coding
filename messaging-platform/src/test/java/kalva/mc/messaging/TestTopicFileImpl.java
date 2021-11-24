@@ -15,14 +15,14 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class TestTopicFileImpl {
 
-    String ROOT = "/Users/sunilkumar.kalva/workspace/learnings/interviews/messaging-platform" +
+    public static String ROOT = "/Users/sunilkumar.kalva/workspace/learnings/interviews/messaging-platform" +
             "/src/test/logs/";
 
-    String TOPIC = "demo";
-    String FOLDER = ROOT + TOPIC;
+    public static String TOPIC = "demo";
+    public static String FOLDER = ROOT + TOPIC;
 
-    String CLIENT_1 = "client-1";
-    String CLIENT_2 = "client-2";
+    public static String CLIENT_1 = "client-1";
+    public static String CLIENT_2 = "client-2";
 
     @Test
     void simpleTest() throws IOException {

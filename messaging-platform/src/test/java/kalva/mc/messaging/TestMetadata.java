@@ -1,32 +1,22 @@
 package kalva.mc.messaging;
 
-import kalva.mc.messaging.impl.TopicFileImpl;
 import kalva.mc.messaging.impl.TopicMetaData;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-public class TestMetadata {
+import static kalva.mc.messaging.TestTopicFileImpl.*;
 
-    @Test
-    void simpleTest_1() throws IOException {
-        TopicFileImpl topic = new TopicFileImpl("/Users/sunilkumar.kalva/workspace/learnings/interviews/messaging-platform" +
-                "/src/test/java/kalva/mc/messaging/", "demo");
-        for (int i = 1; i <= 100; i++) {
-            topic.write(new Message(("testing " + i).getBytes()));
-        }
-        topic.flush();
-    }
+public class TestMetadata {
 
     @Test
     void simpleTest() throws IOException {
 
-        TopicMetaData metadata = new TopicMetaData("/Users/sunilkumar.kalva/workspace/learnings/interviews/messaging-platform" +
-                "/src/test/java/kalva/mc/messaging/demo");
-        metadata.addClientInfo("abc", new TopicMetaData.ClientInfo("abc", 123L));
-        metadata.addClientInfo("pqr", new TopicMetaData.ClientInfo("pqr", 321L));
+        TopicMetaData metadata = new TopicMetaData(TestTopicFileImpl.FOLDER);
+        metadata.addClientInfo(CLIENT_1, new TopicMetaData.ClientInfo(CLIENT_1, 123L));
+        metadata.addClientInfo(CLIENT_2, new TopicMetaData.ClientInfo(CLIENT_2, 321L));
 
-        metadata.addFileInfo("one", new TopicMetaData.FileInfo("one", 0L, 99L));
+        metadata.addFileInfo(TOPIC, new TopicMetaData.FileInfo(TOPIC, 0L, 99L));
         metadata.save();
     }
 }
