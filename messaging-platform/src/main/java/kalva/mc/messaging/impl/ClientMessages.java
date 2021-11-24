@@ -34,9 +34,8 @@ public class ClientMessages {
         TopicMetaData.FileInfo file = null;
         Collection<TopicMetaData.FileInfo> files = topicDetails.files().values();
         for (TopicMetaData.FileInfo fileInfo : files) {
-            String completeFileName = fileInfo.fileName();
-            String[] split = completeFileName.split("/");
-            String fileName = split[split.length - 1].replace(".log", "");
+            String fileName = logFileName(fileInfo);
+            String[] split;
             split = fileName.split("-");
             Long start = Long.parseLong(split[0]);
             Long end = Long.parseLong(split[1]);
@@ -55,6 +54,12 @@ public class ClientMessages {
                 messagesFromTopic.add(new Message(Long.parseLong(split[0]), split[1].getBytes()));
             }
         }
+    }
+
+    private String logFileName(TopicMetaData.FileInfo fileInfo) {
+        String completeFileName = fileInfo.fileName();
+        String[] split = completeFileName.split("/");
+        return split[split.length - 1].replace(".log", "");
     }
 
     public Message next() throws IOException {
