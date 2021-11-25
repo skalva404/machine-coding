@@ -1,7 +1,6 @@
 package kalva.mc.parking;
 
 import kalva.mc.parking.commands.*;
-import swiggy.interview.parking.commands.*;
 
 public enum CommandType {
     create_parking_lot(CreateCommand.class),
