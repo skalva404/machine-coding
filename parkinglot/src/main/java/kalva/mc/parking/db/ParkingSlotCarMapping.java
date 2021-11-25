@@ -24,7 +24,7 @@ public class ParkingSlotCarMapping implements Table {
     private Map<String, ParkingSlot> regNumToSlotIndex = null;
     private Map<String, List<ParkingSlot>> colorToCarIndex = null;
 
-    private long size = 10;
+    private long size;
 
     public ParkingSlotCarMapping(Long size) {
         this.size = size;
@@ -70,7 +70,7 @@ public class ParkingSlotCarMapping implements Table {
         Optional<ParkingSlot> first = occupiedSlots().stream()
                 .filter(ps -> slotId.equals(ps.id()))
                 .findFirst();
-        if (!first.isPresent()) {
+        if (first.isEmpty()) {
             throw new ParkingError(ErrorConstants.INVALID_ARGS.message() + slotId);
         }
 

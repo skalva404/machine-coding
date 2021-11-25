@@ -15,9 +15,6 @@ public class Utils {
         T result;
         try {
             Constructor<T> constructor = theClass.getDeclaredConstructor(List.class);
-            if (constructor == null) {
-                throw new ParkingError(ErrorConstants.COMMAND_CREATE_ERROR.message() + theClass);
-            }
             if (null == args) {
                 args = new ArrayList<>();
             }
@@ -34,7 +31,7 @@ public class Utils {
         System.arraycopy(args, 1, params, 0, args.length - 1);
         try {
             CommandType commandType = CommandType.valueOf(args[0]);
-            Command command = (Command) Utils.newInstance(commandType.getImplementation(),
+            var command = (Command) Utils.newInstance(commandType.getImplementation(),
                     Arrays.asList(params));
             if (!commandType.equals(CommandType.create_parking_lot)) {
                 command.setSlotCarMapping(table);
