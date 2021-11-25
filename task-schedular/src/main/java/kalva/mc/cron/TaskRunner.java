@@ -85,7 +85,7 @@ public class TaskRunner implements Service {
 
         @Override
         public Status execute() {
-            log.info("consuming job");
+            log.info("consuming jobs ...");
             JobInstance instance = queue.consume();
             if (null == instance) {
                 return Status.BACKOFF;
@@ -94,7 +94,7 @@ public class TaskRunner implements Service {
             executorService.submit(() -> {
                 try {
                     instance.task().execute(new TaskContext(instance.jobId()));
-                } catch (TaskError e) {
+                } catch (Throwable e) {
                     log.error("failed job {}", instance.jobId(), e);
                 }
             });

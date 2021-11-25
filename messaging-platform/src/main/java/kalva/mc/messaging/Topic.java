@@ -4,9 +4,9 @@ import java.io.IOException;
 
 public interface Topic {
 
-    void write(Message message) throws IOException;
+    void write(Record record) throws IOException;
 
-    Message read(String clientId) throws IOException;
+    Record read(String clientId) throws IOException;
 
     void commit(String clientId, Long offsetId) throws IOException;
 

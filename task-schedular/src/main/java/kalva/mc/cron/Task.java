@@ -3,5 +3,5 @@ package kalva.mc.cron;
 @FunctionalInterface
 public interface Task {
 
-    void execute(TaskContext context) throws TaskError;
+    void execute(TaskContext context);
 }

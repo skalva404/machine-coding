@@ -28,6 +28,23 @@ public class TestCronStore {
     }
 
     @Test
+    void withDelayed() {
+
+        CronStore store = new CronStore();
+        Calendar date = Calendar.getInstance();
+        date.add(Calendar.MINUTE, 5);
+        store.save(new Job(UUID.randomUUID().toString(),
+                Schedule.withDelayed(TimeUnit.SECONDS.toMillis(1)),
+                context -> System.out.println(context.toString())));
+
+        Queue<JobInstance> jobInstances = store.getJobInstances(5);
+        Assertions.assertEquals(1, jobInstances.size());
+
+        jobInstances = store.getInstancesForNext(5, TimeUnit.SECONDS);
+        Assertions.assertEquals(0, jobInstances.size());
+    }
+
+    @Test
     void withRecurring() {
 
         CronStore store = new CronStore();

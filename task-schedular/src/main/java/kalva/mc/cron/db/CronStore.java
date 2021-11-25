@@ -26,18 +26,16 @@ public final class CronStore {
     public synchronized Queue<JobInstance> getInstancesForNext(int time, TimeUnit unit) {
         long maxAllowed = System.currentTimeMillis() + unit.toMillis(time);
         Queue<JobInstance> instances = new ArrayDeque<>();
-        while (true) {
-            JobInstance peek = priorityQueue.peek();
-            if (null == peek) {
-                break;
-            }
-            if (peek.executionTime().getTime() <= maxAllowed) {
-                log.info("retrieving the job id {}", peek.jobId());
-                instances.offer(priorityQueue.poll());
-                markSuccess(peek.jobId());
-            } else {
-                break;
-            }
+        JobInstance peek = priorityQueue.peek();
+        if (null == peek) {
+            return instances;
+        }
+        if (peek.executionTime().getTime() <= maxAllowed) {
+            log.info("retrieving the job id {}", peek.jobId());
+            instances.offer(priorityQueue.poll());
+            markSuccess(peek.jobId());
+        } else {
+            return instances;
         }
         return instances;
     }

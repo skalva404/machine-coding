@@ -7,11 +7,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="cron" />
         <module name="messaging-platform" />
+        <module name="fk-actor" />
+      </profile>
+      <profile name="Annotation profile for cron" enabled="true">
+        <sourceOutputDir name="../cron/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../cron/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
         <module name="task-schedular" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cron" target="17" />
+      <module name="fk-actor" target="17" />
       <module name="messaging-platform" target="17" />
       <module name="task-schedular" target="17" />
     </bytecodeTargetLevel>

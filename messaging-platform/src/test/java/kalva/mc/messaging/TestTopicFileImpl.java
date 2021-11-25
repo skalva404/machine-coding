@@ -38,7 +38,7 @@ public class TestTopicFileImpl {
         TopicFileImpl topic = new TopicFileImpl(ROOT, TOPIC);
 
         for (int i = 1; i <= 100; i++) {
-            topic.write(new Message(("testing " + i).getBytes()));
+            topic.write(new Record(("testing " + i).getBytes()));
         }
         topic.flush();
 
@@ -50,8 +50,8 @@ public class TestTopicFileImpl {
     }
 
     private void consume(TopicFileImpl topic, int n, int offset) throws IOException {
-        Message read1 = null;
-        Message read2 = null;
+        Record read1 = null;
+        Record read2 = null;
         for (int i = 1; i <= n; i++) {
             read1 = topic.read(CLIENT_1);
             read2 = topic.read(CLIENT_2);
@@ -61,7 +61,7 @@ public class TestTopicFileImpl {
         validate(topic, read1, read2, offset);
     }
 
-    private void validate(TopicFileImpl topic, Message read1, Message read2, int offset) throws IOException {
+    private void validate(TopicFileImpl topic, Record read1, Record read2, int offset) throws IOException {
         assertEquals(offset, read1.offsetId());
         assertEquals(offset, read2.offsetId());
         topic.commit(CLIENT_1, read1.offsetId());

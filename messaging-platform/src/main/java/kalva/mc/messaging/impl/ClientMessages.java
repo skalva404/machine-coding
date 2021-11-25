@@ -1,6 +1,6 @@
 package kalva.mc.messaging.impl;
 
-import kalva.mc.messaging.Message;
+import kalva.mc.messaging.Record;
 import kalva.mc.messaging.impl.TopicMetaData.TopicDetails;
 import lombok.Getter;
 import lombok.experimental.Accessors;
@@ -20,7 +20,7 @@ public class ClientMessages {
     private String clientId;
     private Long currentOffset;
     private TopicMetaData metadata;
-    private Queue<Message> messagesFromTopic;
+    private Queue<Record> messagesFromTopic;
 
     public ClientMessages(String clientId, Long currentOffset,
                           TopicMetaData metadata) throws IOException {
@@ -51,7 +51,7 @@ public class ClientMessages {
             messagesFromTopic = new ArrayDeque<>();
             for (String s : messages) {
                 String[] split = s.split(":");
-                messagesFromTopic.add(new Message(Long.parseLong(split[0]), split[1].getBytes()));
+                messagesFromTopic.add(new Record(Long.parseLong(split[0]), split[1].getBytes()));
             }
         }
     }
@@ -62,14 +62,14 @@ public class ClientMessages {
         return split[split.length - 1].replace(".log", "");
     }
 
-    public Message next() throws IOException {
+    public Record next() throws IOException {
         if (null == messagesFromTopic || 0 == messagesFromTopic.size()) {
             reLoadMessage(metadata.read());
         }
         if (null == messagesFromTopic || 0 == messagesFromTopic.size()) {
             return null;
         }
-        Message poll = messagesFromTopic.poll();
+        Record poll = messagesFromTopic.poll();
         if (null == poll) {
             return null;
         }

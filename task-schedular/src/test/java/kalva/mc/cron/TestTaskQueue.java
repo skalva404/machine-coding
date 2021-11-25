@@ -10,7 +10,7 @@ import java.util.concurrent.CountDownLatch;
 public class TestTaskQueue {
 
     @Test
-    void simpleTest() throws InterruptedException, TaskError {
+    void simpleTest() throws InterruptedException {
 
         CountDownLatch countDownLatch = new CountDownLatch(2);
         TaskQueue<Task> queue = new TaskQueue<>(2);

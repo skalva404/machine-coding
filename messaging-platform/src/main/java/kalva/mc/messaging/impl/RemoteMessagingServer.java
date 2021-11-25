@@ -1,18 +1,18 @@
 package kalva.mc.messaging.impl;
 
-import kalva.mc.messaging.Message;
+import kalva.mc.messaging.Record;
 import kalva.mc.messaging.MessagingServer;
 import kalva.mc.messaging.Service;
 
 public class RemoteMessagingServer implements MessagingServer, Service {
 
     @Override
-    public void send(Message message) {
+    public void send(Record record) {
 
     }
 
     @Override
-    public Message consume(String clientId, String topic) {
+    public Record consume(String clientId, String topic) {
         return null;
     }
 

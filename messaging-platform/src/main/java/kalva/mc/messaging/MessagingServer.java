@@ -2,8 +2,8 @@ package kalva.mc.messaging;
 
 public interface MessagingServer {
 
-    void send(Message message);
+    void send(Record record);
 
-    Message consume(String clientId, String topic);
+    Record consume(String clientId, String topic);
 
 }

@@ -1,6 +1,6 @@
 package kalva.mc.messaging.impl;
 
-import kalva.mc.messaging.Message;
+import kalva.mc.messaging.Record;
 import kalva.mc.messaging.Topic;
 import kalva.mc.messaging.impl.TopicMetaData.ClientInfo;
 
@@ -42,11 +42,11 @@ public class TopicFileImpl implements Topic {
     }
 
     @Override
-    public synchronized void write(Message message) throws IOException {
+    public synchronized void write(Record record) throws IOException {
         if (currentFileCount > 100) {
             flush();
         }
-        messages.add(new String(message.body()));
+        messages.add(new String(record.body()));
         currentFileCount++;
     }
 
@@ -81,12 +81,12 @@ public class TopicFileImpl implements Topic {
     }
 
     @Override
-    public Message read(String clientId) throws IOException {
+    public Record read(String clientId) throws IOException {
         ClientMessages clientMessages = subscribedClients.get(clientId);
         if (null == clientMessages) {
             throw new RuntimeException("Client id " + clientId + " not subscribed");
         }
-        Message next = clientMessages.next();
+        Record next = clientMessages.next();
         while (null != next && next.offsetId() <= prevOffset) {
             next = clientMessages.next();
         }
