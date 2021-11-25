@@ -15,7 +15,7 @@ public class SimpleActorService implements ActorService {
     private final Config config;
     private Map<String, Listener> listeners;
     private volatile boolean initialized = false;
-    private AtomicBoolean shutdownCalled = new AtomicBoolean(Boolean.FALSE);
+    private AtomicBoolean shutdown = new AtomicBoolean(Boolean.FALSE);
 
     public SimpleActorService(Config config) {
         this.config = config;
@@ -25,7 +25,7 @@ public class SimpleActorService implements ActorService {
         log.info("starting simple actionservice");
         initialized = true;
         listeners = new ConcurrentHashMap<>();
-        shutdownCalled = new AtomicBoolean(Boolean.FALSE);
+        shutdown = new AtomicBoolean(Boolean.FALSE);
     }
 
     private void preCheck() {
@@ -54,7 +54,7 @@ public class SimpleActorService implements ActorService {
         preCheck();
         Listener listener = listeners.get(refId);
         if (null != listener) {
-            listener.notifyMessage(message);
+            listener.trigger(message);
             log.debug("published the message to {}", refId);
         } else {
             throw new ActorNotFound(refId);
@@ -62,12 +62,12 @@ public class SimpleActorService implements ActorService {
     }
 
     public synchronized void close() {
-        if (shutdownCalled.get()) {
+        if (shutdown.get()) {
             return;
         }
         initialized = false;
         log.info("stopping simple actionservice");
-        shutdownCalled.set(Boolean.FALSE);
+        shutdown.set(Boolean.FALSE);
         listeners.forEach((id, listener) -> {
             log.info("stopping the listener {}", id);
             try {

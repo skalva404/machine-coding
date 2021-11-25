@@ -1,7 +1,7 @@
 package swiggy.testing;
 
-import static swiggy.interview.parking.CommandType.*;
-import static swiggy.interview.parking.Utils.*;
+import static kalva.mc.parking.CommandType.*;
+import static kalva.mc.parking.Utils.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,14 +9,14 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-import swiggy.interview.parking.ParkingError;
-import swiggy.interview.parking.commands.CreateCommand;
-import swiggy.interview.parking.commands.LeaveCommand;
-import swiggy.interview.parking.commands.ParkCommand;
-import swiggy.interview.parking.commands.RegNumbersByColorCommand;
-import swiggy.interview.parking.commands.StatusCommand;
-import swiggy.interview.parking.model.ParkingSlot;
-import swiggy.interview.parking.service.ParkingLotService;
+import kalva.mc.parking.ParkingError;
+import kalva.mc.parking.commands.CreateCommand;
+import kalva.mc.parking.commands.LeaveCommand;
+import kalva.mc.parking.commands.ParkCommand;
+import kalva.mc.parking.commands.RegNumbersByColorCommand;
+import kalva.mc.parking.commands.StatusCommand;
+import kalva.mc.parking.model.ParkingSlot;
+import kalva.mc.parking.service.ParkingLotService;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

@@ -18,7 +18,7 @@ public class SimpleMailBox implements MailBox {
     }
 
     @Override
-    public void put(Message message) {
+    public void send(Message message) {
         try {
             queue.add(message);
         } catch (IllegalStateException ise) {

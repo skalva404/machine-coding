@@ -10,7 +10,7 @@
 
   <properties>
     <testng>6.11</testng>
-    <jdk.version>1.8</jdk.version>
+    <jdk.version>17</jdk.version>
   </properties>
 
   <dependencies>
@@ -48,7 +48,7 @@
           <!-- MainClass in mainfest make a executable jar -->
           <archive>
             <manifest>
-              <mainClass>swiggy.interview.parking.service.ParkingApp</mainClass>
+              <mainClass>kalva.mc.parking.ParkingApp</mainClass>
             </manifest>
           </archive>
         </configuration>

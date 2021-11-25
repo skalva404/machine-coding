@@ -3,7 +3,7 @@ package kalva.mc.actor;
 import java.util.concurrent.TimeUnit;
 
 public interface MailBox {
-    void put(Message message);
+    void send(Message message);
 
     Message get() throws InterruptedException;
 

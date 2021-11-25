@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public abstract class TaskRunner extends Thread implements LifeCycle {
 
-    private MailBox mailBox;
+    private final MailBox mailBox;
     volatile boolean shutdown = Boolean.FALSE;
 
     TaskRunner(String name, MailBox mailBox) {
@@ -43,13 +43,13 @@ public abstract class TaskRunner extends Thread implements LifeCycle {
         }
     }
 
-    private void drainAndProcess(int i) throws InterruptedException {
-        Message message = mailBox.get(i, TimeUnit.MILLISECONDS);
+    private void drainAndProcess(int timeInMillis) throws InterruptedException {
+        Message message = mailBox.get(timeInMillis, TimeUnit.MILLISECONDS);
         if (null == message) {
             return;
         }
         log.debug("submitting message {} by {}", new String(message.data()), getName());
-        processMessage(message);
+        execute(message);
     }
 
     @Override
@@ -59,5 +59,5 @@ public abstract class TaskRunner extends Thread implements LifeCycle {
         drainQueue();
     }
 
-    public abstract void processMessage(Message message);
+    public abstract void execute(Message message);
 }

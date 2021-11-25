@@ -11,7 +11,7 @@ public class TestSimpleMailbox {
     public void testPutnGet() throws InterruptedException {
         String message = "testing";
         MailBox mailBox = new SimpleMailBox(5);
-        mailBox.put(new Message(message.getBytes()));
+        mailBox.send(new Message(message.getBytes()));
         Assert.assertEquals(message, new String(mailBox.get().data()));
     }
 
@@ -19,8 +19,8 @@ public class TestSimpleMailbox {
     public void testSizeFull() {
         MailBox mailBox = new SimpleMailBox(5);
         for (int i = 1; i <= 5; i++) {
-            mailBox.put(new Message("testing".getBytes()));
+            mailBox.send(new Message("testing".getBytes()));
         }
-        mailBox.put(new Message("testing".getBytes()));
+        mailBox.send(new Message("testing".getBytes()));
     }
 }

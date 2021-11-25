@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="cron" />
         <module name="messaging-platform" />
+        <module name="parking-lot" />
         <module name="fk-actor" />
       </profile>
       <profile name="Annotation profile for cron" enabled="true">
@@ -22,6 +23,7 @@
       <module name="cron" target="17" />
       <module name="fk-actor" target="17" />
       <module name="messaging-platform" target="17" />
+      <module name="parking-lot" target="1.8" />
       <module name="task-schedular" target="17" />
     </bytecodeTargetLevel>
   </component>

@@ -31,7 +31,7 @@ public class ActorSystem implements LifeCycle {
         return getInstance().actorService;
     }
 
-    public static ExecutorService resourcePool() {
+    public static ExecutorService cpu() {
         return getInstance().executor;
     }
 

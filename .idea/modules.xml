@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/task-schedular/cron.iml" filepath="$PROJECT_DIR$/task-schedular/cron.iml" />
       <module fileurl="file://$PROJECT_DIR$/actor-system/fk-actor.iml" filepath="$PROJECT_DIR$/actor-system/fk-actor.iml" />
       <module fileurl="file://$PROJECT_DIR$/messaging-platform/messaging-platform.iml" filepath="$PROJECT_DIR$/messaging-platform/messaging-platform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parkinglot/parking-lot.iml" filepath="$PROJECT_DIR$/parkinglot/parking-lot.iml" />
       <module fileurl="file://$PROJECT_DIR$/cron/task-schedular.iml" filepath="$PROJECT_DIR$/cron/task-schedular.iml" />
     </modules>
   </component>

@@ -27,7 +27,7 @@ public class TestSimpleListener {
                 },
                 new SimpleMailBox(10));
         listener.init();
-        listener.notifyMessage(new Message("Testing".getBytes()));
+        listener.trigger(new Message("Testing".getBytes()));
         listener.close();
     }
 
@@ -38,7 +38,7 @@ public class TestSimpleListener {
         Listener listener = new SimpleListener(dummyActor, simpleMailBox);
         listener.init();
         for (int i = 1; i <= 5; i++) {
-            listener.notifyMessage(new Message("Testing".getBytes()));
+            listener.trigger(new Message("Testing".getBytes()));
         }
         TimeUnit.SECONDS.sleep(1);
         listener.close();
@@ -51,9 +51,9 @@ public class TestSimpleListener {
         SimpleMailBox simpleMailBox = new SimpleMailBox(1);
         Listener listener = new SimpleListener(dummyActor, simpleMailBox);
         listener.init();
-        listener.notifyMessage(new Message("Testing".getBytes()));
+        listener.trigger(new Message("Testing".getBytes()));
         listener.close();
-        listener.notifyMessage(new Message("Testing".getBytes()));
+        listener.trigger(new Message("Testing".getBytes()));
     }
 
     class DummyActor implements Actor {
