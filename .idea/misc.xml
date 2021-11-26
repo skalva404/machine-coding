@@ -5,7 +5,6 @@
       <list>
         <option value="$PROJECT_DIR$/cron/pom.xml" />
         <option value="$PROJECT_DIR$/messaging-platform/pom.xml" />
-        <option value="$PROJECT_DIR$/task-schedular/pom.xml" />
         <option value="$PROJECT_DIR$/actor-system/pom.xml" />
         <option value="$PROJECT_DIR$/parkinglot/pom.xml" />
       </list>
