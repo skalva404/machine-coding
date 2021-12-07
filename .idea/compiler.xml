@@ -9,14 +9,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="messaging-platform" />
         <module name="parking-lot" />
-        <module name="fk-actor" />
-        <module name="flipkart" />
-      </profile>
-      <profile name="Annotation profile for cron" enabled="true">
-        <sourceOutputDir name="../cron/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../cron/target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
         <module name="task-schedular" />
+        <module name="fk-actor" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
