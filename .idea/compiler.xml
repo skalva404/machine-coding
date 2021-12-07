@@ -10,6 +10,7 @@
         <module name="messaging-platform" />
         <module name="parking-lot" />
         <module name="fk-actor" />
+        <module name="flipkart" />
       </profile>
       <profile name="Annotation profile for cron" enabled="true">
         <sourceOutputDir name="../cron/target/generated-sources/annotations" />
@@ -21,6 +22,7 @@
     <bytecodeTargetLevel>
       <module name="cron" target="17" />
       <module name="fk-actor" target="17" />
+      <module name="flipkart" target="17" />
       <module name="messaging-platform" target="17" />
       <module name="parking-lot" target="17" />
       <module name="task-schedular" target="17" />
