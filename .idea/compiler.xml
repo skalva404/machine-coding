@@ -10,11 +10,13 @@
         <module name="messaging-platform" />
         <module name="parking-lot" />
         <module name="task-schedular" />
+        <module name="elevator" />
         <module name="fk-actor" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="cron" target="17" />
+      <module name="elevator" target="17" />
       <module name="fk-actor" target="17" />
       <module name="flipkart" target="17" />
       <module name="messaging-platform" target="17" />

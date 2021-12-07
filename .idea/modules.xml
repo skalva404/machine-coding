@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/elevator/elevator.iml" filepath="$PROJECT_DIR$/elevator/elevator.iml" />
       <module fileurl="file://$PROJECT_DIR$/actor-system/fk-actor.iml" filepath="$PROJECT_DIR$/actor-system/fk-actor.iml" />
       <module fileurl="file://$PROJECT_DIR$/messaging-platform/messaging-platform.iml" filepath="$PROJECT_DIR$/messaging-platform/messaging-platform.iml" />
       <module fileurl="file://$PROJECT_DIR$/parkinglot/parking-lot.iml" filepath="$PROJECT_DIR$/parkinglot/parking-lot.iml" />
