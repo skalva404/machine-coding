@@ -6,7 +6,9 @@
       <module fileurl="file://$PROJECT_DIR$/actor-system/fk-actor.iml" filepath="$PROJECT_DIR$/actor-system/fk-actor.iml" />
       <module fileurl="file://$PROJECT_DIR$/messaging-platform/messaging-platform.iml" filepath="$PROJECT_DIR$/messaging-platform/messaging-platform.iml" />
       <module fileurl="file://$PROJECT_DIR$/parkinglot/parking-lot.iml" filepath="$PROJECT_DIR$/parkinglot/parking-lot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rate-limitter/rate-limitter.iml" filepath="$PROJECT_DIR$/rate-limitter/rate-limitter.iml" />
       <module fileurl="file://$PROJECT_DIR$/task-schedular/task-schedular.iml" filepath="$PROJECT_DIR$/task-schedular/task-schedular.iml" />
+      <module fileurl="file://$PROJECT_DIR$/trending-items/trending-items.iml" filepath="$PROJECT_DIR$/trending-items/trending-items.iml" />
     </modules>
   </component>
 </project>
