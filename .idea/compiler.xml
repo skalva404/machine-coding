@@ -13,10 +13,8 @@
         <module name="chess" />
         <module name="rate-limitter" />
         <module name="nearby-cabs" />
-        <module name="log4j-issues" />
         <module name="trending-items" />
         <module name="task-schedular" />
-        <module name="JNDIExploit" />
         <module name="fk-actor" />
       </profile>
     </annotationProcessing>

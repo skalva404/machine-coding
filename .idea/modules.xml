@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JNDIExploit/JNDIExploit.iml" filepath="$PROJECT_DIR$/JNDIExploit/JNDIExploit.iml" />
       <module fileurl="file://$PROJECT_DIR$/chess/chess.iml" filepath="$PROJECT_DIR$/chess/chess.iml" />
       <module fileurl="file://$PROJECT_DIR$/elevator/elevator.iml" filepath="$PROJECT_DIR$/elevator/elevator.iml" />
       <module fileurl="file://$PROJECT_DIR$/actor-system/fk-actor.iml" filepath="$PROJECT_DIR$/actor-system/fk-actor.iml" />
-      <module fileurl="file://$PROJECT_DIR$/servlet-demo/log4j-issues.iml" filepath="$PROJECT_DIR$/servlet-demo/log4j-issues.iml" />
       <module fileurl="file://$PROJECT_DIR$/messaging-platform/messaging-platform.iml" filepath="$PROJECT_DIR$/messaging-platform/messaging-platform.iml" />
       <module fileurl="file://$PROJECT_DIR$/nearby-cabs/nearby-cabs.iml" filepath="$PROJECT_DIR$/nearby-cabs/nearby-cabs.iml" />
       <module fileurl="file://$PROJECT_DIR$/parkinglot/parking-lot.iml" filepath="$PROJECT_DIR$/parkinglot/parking-lot.iml" />
