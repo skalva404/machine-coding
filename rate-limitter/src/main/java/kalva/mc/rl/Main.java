@@ -9,7 +9,7 @@ public class Main {
 
         final int MAX_REQUESTS_PER_SEC = 10;
 
-        RateLimiter rateLimiter = new TokenBucketLazyRefill(MAX_REQUESTS_PER_SEC);
+        RateLimiter rateLimiter = new SlidingWindowLog(MAX_REQUESTS_PER_SEC);
 
         Thread requestThread = new Thread(() -> {
             sendRequest(rateLimiter, 10, 1);

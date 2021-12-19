@@ -11,6 +11,10 @@
         <option value="$PROJECT_DIR$/elevator/pom.xml" />
         <option value="$PROJECT_DIR$/trending-items/pom.xml" />
         <option value="$PROJECT_DIR$/rate-limitter/pom.xml" />
+        <option value="$PROJECT_DIR$/nearby-cabs/pom.xml" />
+        <option value="$PROJECT_DIR$/servlet-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/JNDIExploit/pom.xml" />
+        <option value="$PROJECT_DIR$/chess/pom.xml" />
       </list>
     </option>
   </component>

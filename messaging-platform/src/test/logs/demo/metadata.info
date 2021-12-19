@@ -1,0 +1,25 @@
+{
+  "latestOffset": 101,
+  "latestFileInfo": {
+    "fileName": "/Users/sunilkumar.kalva/workspace/learnings/interviews/messaging-platform/src/test/logs/demo/1-100.log",
+    "start": 1,
+    "end": 100
+  },
+  "files": {
+    "/Users/sunilkumar.kalva/workspace/learnings/interviews/messaging-platform/src/test/logs/demo/1-100.log": {
+      "fileName": "/Users/sunilkumar.kalva/workspace/learnings/interviews/messaging-platform/src/test/logs/demo/1-100.log",
+      "start": 1,
+      "end": 100
+    }
+  },
+  "clients": {
+    "client-2": {
+      "clientId": "client-2",
+      "offset": 100
+    },
+    "client-1": {
+      "clientId": "client-1",
+      "offset": 100
+    }
+  }
+}
